@@ -1,0 +1,65 @@
+<ion-header style="display: flex;">
+  <ion-toolbar>
+    <ion-title>about</ion-title>
+  </ion-toolbar>
+  <ion-button color="primary" style="    margin: 10px;" (click)="back()">Geri</ion-button>
+</ion-header>
+
+<ion-content>
+  <div class="ui-block-content">
+
+					
+    <!-- Personal Account Settings Form -->
+    
+    <form>
+      <div class="row" *ngIf="flowClass">
+    
+        
+        
+    
+        <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="description-toggle">
+            <div class="description-toggle-content">
+              <div class="h6">Sınıf Adı</div>
+              <p> {{flowClass.name}} </p>
+            </div>
+    
+            
+          </div>
+          <div class="description-toggle">
+            <div class="description-toggle-content">
+              <div class="h6">Oluşturulma tarihi</div>
+              <p> {{flowClass.createdAt |date:'fullDate'}} </p>
+            </div>
+    
+            
+          </div>
+          <div class="description-toggle">
+            <div class="description-toggle-content">
+              <div class="h6"> Ders Kodu </div>
+              <p> {{flowClass.alphaNumericCode}} </p>
+            </div>
+    
+            
+          </div>
+          <div class="description-toggle">
+            <div class="description-toggle-content">
+              <div class="h6">Eğitim Öğretim Yılı</div>
+              <p>{{flowClass.educationYear}}</p>
+            </div>
+    
+            
+          </div>
+        </div>
+    
+        
+        <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+          <button class="btn btn-primary btn-lg full-width">OK</button>
+        </div>
+      </div>
+    </form>
+    
+    <!-- ... end Personal Account Settings Form  -->
+
+  </div>
+</ion-content>

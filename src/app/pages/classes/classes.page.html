@@ -1,0 +1,249 @@
+<div class="page-has-left-panels page-has-right-panels">
+
+  <div class="fixed-sidebar">
+    <div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
+
+      <a class="logo">
+        <div class="img-wrap">
+          <img loading="lazy" src="../../../assets/as2/img/logo.png" alt="Olympus">
+        </div>
+      </a>
+
+    </div>
+
+
+  </div>
+
+  <!-- ... end Fixed Sidebar Left -->
+
+
+  <!-- Fixed Sidebar Left -->
+
+  <div class="fixed-sidebar fixed-sidebar-responsive">
+
+    <div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
+      <a class="logo js-sidebar-open">
+        <img loading="lazy" src="../../../assets/as2/img/logo.png" alt="Olympus">
+      </a>
+
+    </div>
+
+
+  </div>
+
+  <!-- ... end Fixed Sidebar Left -->
+
+
+  <!-- Fixed Sidebar Right -->
+
+  <div class="fixed-sidebar right">
+    <div class="fixed-sidebar-right sidebar--small" id="sidebar-right">
+
+    </div>
+
+    <div class="fixed-sidebar-right sidebar--large" id="sidebar-right-1">
+
+
+
+    </div>
+  </div>
+
+  <!-- ... end Fixed Sidebar Right -->
+
+
+  <!-- Fixed Sidebar Right-Responsive -->
+
+  <div class="fixed-sidebar right fixed-sidebar-responsive" id="sidebar-right-responsive">
+
+    <div class="fixed-sidebar-right sidebar--small">
+      <a class="js-sidebar-open">
+        <svg class="olymp-menu-icon">
+          <use xlink:href="#olymp-menu-icon"></use>
+        </svg>
+        <svg class="olymp-close-icon">
+          <use xlink:href="#olymp-close-icon"></use>
+        </svg>
+      </a>
+
+    </div>
+
+
+  </div>
+
+  <!-- ... end Fixed Sidebar Right-Responsive -->
+
+
+  <!-- Header-BP -->
+
+
+
+  <!-- ... end Header-BP -->
+
+
+  <!-- Responsive Header-BP -->
+
+  <header class="header header-responsive" id="site-header-responsive">
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+          'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '../../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-568DJSG');</script>
+    <!-- End Google Tag Manager -->
+
+    <div class="header-content-wrapper">
+      <ul class="nav nav-tabs mobile-app-tabs" role="tablist">
+        <li class="nav-item" style="color: white; margin-top: 10px; font-size: 20px;">
+
+          
+          <div>Sınıflar</div>
+
+
+        </li>
+      </ul>
+      <ion-button color="primary" style="    margin: 10px;" (click)="logOut()">Çıkış Yap</ion-button>
+    </div>
+
+
+
+  </header>
+
+  <!-- ... end Responsive Header-BP -->
+
+  <div class="header-spacer header-spacer-small"></div>
+
+
+  <!-- Main Header Groups -->
+
+  <div class="main-header">
+    <div class="content-bg-wrap bg-group"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+          <div> </div>
+          <div class="main-header-content">
+            <div style="font-size: 20px;
+            color: red;
+            font-weight: bold;margin-bottom: 0px;">
+              Hoşgeldiniz {{currentUser.firstname}} {{currentUser.lastname}} !!!
+            </div>
+            <h1 style="margin-top: 0px;">Eğitim Öğretim Yılı Seçiniz</h1>
+            <p>
+              <ion-item>
+                <ion-label>Eğitim Yılı</ion-label>
+                <ion-select value="brown" okText="Seç" cancelText="Vazgeç" #newSelect [(ngModel)]="eduYear"
+                  (ionChange)="onChange(eduYear)">
+                  <ion-select-option value="2019-2020">2019-2020</ion-select-option>
+                  <ion-select-option value="2020-2021">2020-2021</ion-select-option>
+                  <ion-select-option value="2021-2022">2021-2022</ion-select-option>
+                  <ion-select-option value="2022-2023">2022-2023</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img class="img-bottom" src="../../../assets/as2/img/bg-section5.png" alt="friends">
+  </div>
+
+  <!-- ... end Main Header Groups -->
+
+  <!-- Main Content Groups -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+
+        <!-- Friend Item -->
+
+        <div class="friend-item friend-groups create-group h-75 mb-3">
+
+          <a href="#" class="  full-block" data-toggle="modal"></a>
+          <div class="content">
+
+            <!-- <a href="#" class="  btn btn-control bg-blue" data-toggle="modal" data-target="#create-friend-group-1">
+              <svg class="olymp-plus-icon"><use xlink:href="#olymp-plus-icon"></use></svg>
+            </a> -->
+            <a class="  btn btn-control bg-blue" data-toggle="modal" (click)="presentModal()">
+              <svg class="olymp-plus-icon">
+                <use xlink:href="#olymp-plus-icon"></use>
+              </svg>
+            </a>
+
+
+            <div class="author-content">
+              <a class="h5 author-name">Sınıf Ekle</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ... end Friend Item -->
+      </div>
+      <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
+
+        <!-- Friend Item -->
+
+        <div class="friend-item friend-groups create-group h-75 mb-3">
+
+          <a href="#" class="  full-block" data-toggle="modal"></a>
+          <div class="content">
+
+            <!-- <a href="#" class="  btn btn-control bg-blue" data-toggle="modal" data-target="#create-friend-group-1">
+              <svg class="olymp-plus-icon"><use xlink:href="#olymp-plus-icon"></use></svg>
+            </a> -->
+            <a class="  btn btn-control bg-blue" data-toggle="modal" (click)="JoinClass()">
+              <svg class="olymp-magnifying-glass-icon">
+                <use xlink:href="#olymp-magnifying-glass-icon"></use>
+              </svg>
+            </a>
+
+
+            <div class="author-content">
+              <a class="h5 author-name">Sınıfa Katıl</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ... end Friend Item -->
+      </div>
+      <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-3" *ngIf="classes">
+        <div class="ui-block h-100 mb-0">
+
+          <!-- Friend Item -->
+
+          <div class="friend-item friend-groups">
+
+            <div class="friend-item-content">
+
+              
+              <div class="friend-avatar" *ngFor="let class of classes">
+                <div class="author-thumb">
+                  <img loading="lazy" src="../../../assets/as2/img/logo.png" alt="Olympus" (click)="GoClass(class)">
+                </div>
+                <div class="author-content">
+                  <a href="#" class="h5 author-name"> {{class.name}} </a>
+                  <div class="country">Memebers in the Group</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ... end Friend Item -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

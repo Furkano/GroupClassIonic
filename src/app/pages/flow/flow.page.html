@@ -1,0 +1,94 @@
+<ion-header style="display: flex;">
+  <ion-toolbar>
+    <ion-title *ngIf="flowClass">{{flowClass.name}}</ion-title>
+  </ion-toolbar>
+  <ion-button color="primary" style="    margin: 10px;" (click)="logOut()">Çıkış Yap</ion-button>
+  <ion-button color="primary" style="    margin: 10px;" (click)="back()">Geri</ion-button>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+
+    <!-- News Feed Form  -->
+
+    <div class="news-feed-form">
+
+
+      <!-- Tab panes -->
+      <div class="tab-content" style="    border-block-end-color: red; border-style: outset; margin-top: 10px;">
+        <div class="tab-pane active" id="home-1" role="tabpanel" aria-expanded="true">
+          <form [formGroup]="postForm" (ngSubmit)="share()" novalidate>
+            <div class="form-group label-floating">
+              <label class="control-label">Başlık</label>
+              <input class="form-control" placeholder="" type="text" formControlName="title" name="title"
+                [ngClass]="{ 'is-invalid':(f.title.touched || f.title.dirty) && f.title.errors }">
+              <div *ngIf="f.title.errors" class="invalid-feedback">
+                <div *ngIf=" f.title.errors.required">Bir başlık gerekli</div>
+                <div *ngIf=" f.title.errors.minlength">en az 5 karakterli olmalı.</div>
+              </div>
+
+            </div>
+            <div class="author-thumb">
+              <img loading="lazy" style="margin-top: 40px;" src="../../../assets/as2/img/author-page.jpg" alt="author">
+            </div>
+            <div class="form-group with-icon label-floating is-empty">
+              <!-- <label class="control-label">Share what you are thinking here...</label> -->
+              <textarea class="form-control" placeholder="Paylaşım Yap" name="body" formControlName="body"
+                [ngClass]="{ 'is-invalid':(f.body.touched || f.body.dirty) && f.body.errors }"></textarea>
+              <div *ngIf="f.body.errors" class="invalid-feedback">
+                <div *ngIf=" f.body.errors.required">Bir body gerekli</div>
+                <div *ngIf=" f.body.errors.minlength">en az 10 karakterli olmalı.</div>
+              </div>
+              <span class="material-input"></span>
+            </div>
+            <div class="add-options-message" style="text-align: -webkit-right;">
+
+
+              <button class="btn btn-primary btn-md-2" type="submit" [disabled]="postForm.invalid">Gönder</button>
+
+            </div>
+
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- ... end News Feed Form  -->
+  </div>
+  <div class="ui-block" *ngIf="flowPostDtos">
+
+
+
+    <!-- W-Action -->
+
+    <ul class="widget w-friend-pages-added notification-list friend-requests" *ngFor="let onePost of flowPostDtos">
+      <li class="inline-items">
+        <div class="author-thumb">
+          <img loading="lazy" src="../../../assets/as2/img/avatar38-sm.jpg" alt="author">
+        </div>
+        <div class="notification-event">
+          <a href="#" class="h6 notification-friend">{{onePost.title}}</a>
+          <span class="chat-message-item">{{onePost.body}}</span>
+        </div>
+        <span class="notification-icon">
+          <a href="#" class="accept-request">
+            <span class="icon-add without-text">
+              <svg class="olymp-happy-face-icon">
+                <use xlink:href="#olymp-happy-face-icon"></use>
+              </svg>
+            </span>
+          </a>
+        </span>
+      </li>
+
+
+
+      
+
+    </ul>
+
+    <!-- ... end W-Action -->
+  </div>
+</ion-content>

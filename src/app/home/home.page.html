@@ -1,0 +1,20 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" >
+    <ion-tab-button [routerLink]="['flow', id]">
+      <ion-icon name="triangle"></ion-icon >
+      <ion-label>Akış</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button  [routerLink]="['members', id]">
+      <ion-icon name="ellipse"></ion-icon>
+      <ion-label>Kişiler</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button  [routerLink]="['about', id]" >
+      <ion-icon name="square"></ion-icon>
+      <ion-label>Hakkımızda</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

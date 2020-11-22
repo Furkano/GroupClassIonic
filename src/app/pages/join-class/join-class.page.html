@@ -1,0 +1,75 @@
+<ion-header style="display: flex;">
+  <ion-toolbar>
+    <ion-title>JoinClass</ion-title>
+  </ion-toolbar>
+  <ion-button color="primary" style="    margin: 10px;" (click)="dismiss()">Geri</ion-button>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="row">
+      <div class="col col-xl-9 order-xl-2 col-lg-6 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+        <div class="ui-block">
+          <div class="ui-block-title">
+            <h6 class="title">Alpha numerik Kodu giriniz...</h6>
+          </div>
+          <div class="ui-block-content">
+
+
+
+            <!-- Music Playlist Form  -->
+
+            <form [formGroup]="searchForm" (ngSubmit)="GetClasWithAlphaCode()" novalidate>
+
+              <div class="form-group label-floating">
+                <label class="control-label">Alpha Numeric Code</label>
+                <input class="form-control" placeholder="" type="text" formControlName="alphaNumerikCode"
+                  name="alphaNumerikCode"
+                  [ngClass]="{ 'is-invalid':(f.alphaNumerikCode.touched || f.alphaNumerikCode.dirty) && f.alphaNumerikCode.errors }">
+                <div *ngIf="f.alphaNumerikCode.errors" class="invalid-feedback">
+                  <div id="alphaNumerikCode" *ngIf=" f.alphaNumerikCode.errors.required">Bir Code gerekli</div>
+                  <div id="alphaNumerikCode" *ngIf=" f.alphaNumerikCode.errors.minlength">en az 8 karakterli olmalı.</div>
+                </div>
+              </div>
+
+              <div class="col col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                <button type="submit" class="btn btn-green btn-lg full-width btn-icon-left">
+                  Getir</button>
+              </div>
+            </form>
+
+            <!-- ... end Music Playlist Form  -->
+
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-3" *ngIf="searhedClass">
+        <div class="ui-block h-100 mb-0">
+
+          <!-- Friend Item -->
+
+          <div class="friend-item friend-groups">
+
+            <div class="friend-item-content">
+
+
+              <div class="friend-avatar">
+                <div class="author-thumb">
+                  <img loading="lazy" src="../../../assets/as2/img/logo.png" alt="Olympus" (click)="JoinClass()">
+                </div>
+                <div class="author-content">
+                  <a href="#" class="h5 author-name" > {{searhedClass.name}} </a>
+                  <div class="country">Memebers in the Group</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ... end Friend Item -->
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

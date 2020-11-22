@@ -1,0 +1,14 @@
+.landing-page{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+    width: 100%;
+}
+.form-control:focus{
+    color: #495057;
+    background-color: transparent;
+    border-color: #ffc6ba;
+    outline: 0;
+    box-shadow: none;
+}

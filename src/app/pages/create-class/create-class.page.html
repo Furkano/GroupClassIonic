@@ -1,0 +1,34 @@
+<ion-header style="display: flex;">
+  <ion-toolbar>
+    <ion-title>CreateClass</ion-title>
+    
+  </ion-toolbar>
+  <ion-button color="primary" style="    margin: 10px;" (click)="dismiss()">Geri</ion-button>
+</ion-header>
+
+<ion-content>
+  <div class="tab-content" style="    margin-top: 100px;margin-left: 50px;margin-right: 50px;text-align:center;">
+    <div class="tab-pane active" id="home" role="tabpanel">
+      <div class="title h6">Sınıf Oluştur</div>
+      <form class="content">
+        <div class="row">
+          <div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="form-group label-floating">
+              <label class="control-label">Eğitim Öğretim Yılı</label>
+              <input class="form-control" placeholder="" type="text" name="edicationYear">
+            </div>
+          </div>
+          <div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="form-group label-floating">
+              <label class="control-label">Sınıf Adı</label>
+              <input class="form-control" placeholder="" type="text" name="className">
+            </div>
+          </div>
+          <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <a href="#" class="btn btn-purple btn-lg full-width">Kaydet!</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>
